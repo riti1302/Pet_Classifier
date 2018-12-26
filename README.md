@@ -17,6 +17,14 @@ In this Section we are implementing Convolution Neural Network(CNN) Classifier f
 * Numpy
 
 
+### Model Training:
+`python3 Training_the_model.py`
+
+### Using TensorBoard:
+`tensorboard --logdir=logs`
+
+
+
 #### Test Train Split
 Image training set contain 12500 images for each category. I split those into 80% train and 20% means test Split each class images into 10,000 for train and 2,500 for test. 
 

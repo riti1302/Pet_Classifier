@@ -48,18 +48,5 @@ Network Parameter:
 * Binary CrossEntropy loss
 
 
-```python
-classifier = Sequential()
-classifier.add(Conv2D(32,(3,3),input_shape=(64,64,3),activation = 'relu'))
-classifier.add(MaxPooling2D(pool_size=(2,2),strides=2)) #if stride not given it equal to pool filter size
-classifier.add(Conv2D(32,(3,3),activation = 'relu'))
-classifier.add(MaxPooling2D(pool_size=(2,2),strides=2))
-classifier.add(Flatten())
-classifier.add(Dense(units=128,activation='relu'))
-classifier.add(Dense(units=1,activation='sigmoid'))
-adam = tensorflow.keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
-classifier.compile(optimizer=adam,loss='binary_crossentropy',metrics=['accuracy'])
-#tensorboard = TensorBoard(log_dir="logs/{}".format(time())
-```
 ### Conclusion
 The Architecture and parameter used in this network are capable of producing accuracy of **92.56%** on Validation Data which is pretty good. It is possible to Achieve more accuracy on this dataset using deeper network and fine tuning of network parameters for training. You can download this trained model from resource directory and Play with it. 

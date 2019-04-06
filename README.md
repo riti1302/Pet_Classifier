@@ -1,7 +1,5 @@
 # Pet Classifier
 
-![Python 3.6](https://img.shields.io/badge/Python-3.6-brightgreen.svg)    ![Problem Kaggle](https://img.shields.io/badge/Problem-Vision-blue.svg)     ![Problem Kaggle](https://img.shields.io/badge/Data-Kaggle-orange.svg)
-
 The original cat-vs-dog dataset from [kaggle](https://www.kaggle.com/c/dogs-vs-cats) consist of 25000 training images. I have used only 6000 for training set, 3000 images for validation set and 3000 images for test set.
 
 ### Dependencies

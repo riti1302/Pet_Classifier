@@ -2,51 +2,16 @@
 
 ![Python 3.6](https://img.shields.io/badge/Python-3.6-brightgreen.svg)    ![Problem Kaggle](https://img.shields.io/badge/Problem-Vision-blue.svg)     ![Problem Kaggle](https://img.shields.io/badge/Data-Kaggle-orange.svg)
 
-### Problem statement :
-
-In this Section we are implementing Convolution Neural Network(CNN) Classifier for Classifying dog and cat images. The Total number of images available for training is 25,000 and final testing is done on seperate 10,000 images.
-#### Note:This problem statement and dataset is taken from [this](https://www.kaggle.com/c/dogs-vs-cats) Kaggle competition.
+The original cat-vs-dog dataset from [kaggle](https://www.kaggle.com/c/dogs-vs-cats) consist of 25000 training images. I have used only 6000 for training set, 3000 images for validation set and 3000 images for test set.
 
 ### Dependencies
-* Jupyter notebook
-* Tensorflow 1.10
+* Google colab
+* Keras
 * Python 3.6
 * Matplotlib
-* Scikit-Learn
-* Pandas
 * Numpy
 
-
-### Model Training:
-`python3 Training_the_model.py`
-
-### Using TensorBoard:
-`tensorboard --logdir=logs`
-
-
-
-#### Test Train Split
-Image training set contain 12500 images for each category. I split those into 80% train and 20% means test Split each class images into 10,000 for train and 2,500 for test. 
-
-### Architecture
-
-
-```python
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Flatten
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import Conv2D
-from tensorflow.keras.layers import MaxPooling2D
-from tensorflow.keras.callbacks import TensorBoard
-```
-
-
-Network Parameter:
-* Rectifier Linear Unit 
-* Adam optimizer
-* Sigmoid on Final output
-* Binary CrossEntropy loss
-
-
-### Conclusion
-The Architecture and parameter used in this network are capable of producing accuracy of **92.56%** on Validation Data which is pretty good. It is possible to Achieve more accuracy on this dataset using deeper network and fine tuning of network parameters for training. You can download this trained model from resource directory and Play with it. 
+I have used 3 different Convolutional Neural Network models for this classifier:
+1. [Pet-Classifier-without-augmentation](Pet-Classifier-without-augmentation)- It consists of bunch of Convolution and Pooling layers, all trained from scratch. It gives an accuracy of **76.96%** on 30 epochs on test dataset.   
+2. [Pet-Classifier-with-augmentation](Pet-Classifier-with-augmentation)- It uses ImageDataGenerator along with a model similar   to that of the first model. It gives an accuracy of **83.63%** on 30 epochs on test dataset.  
+3. [Pet-Classifier-using-pre_trained-model](Pet-Classifier-using-pre_trained-model)- It uses a pre-trained VGG16 model, initially with a self-trained classifier, and again with fine tuning of the fifth convolutional block and the self-trained classifier. This gives **94.39% accuracy** on 30 epochs.
